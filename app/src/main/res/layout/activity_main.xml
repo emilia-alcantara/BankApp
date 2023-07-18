@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="#011166"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,9 +25,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="Bienvenido. Seleccione acción a realizar:"
+        android:fontFamily="@font/farro"
+        android:gravity="left"
+        android:text="Bienvenido. \nSeleccione acción a realizar:"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/toolbar"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.3"
         app:layout_constraintStart_toStartOf="@+id/toolbar"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
@@ -35,8 +38,10 @@
         android:id="@+id/txtToolBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/farro_bold"
         android:text="Banco App"
         android:textColor="@color/white"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
@@ -60,7 +65,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="Ok"
+        android:backgroundTint="#A6011166"
+        android:paddingVertical="12dp"
+        android:text="Realizar"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="@+id/editMonto"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="@+id/editMonto"
@@ -85,24 +95,28 @@
                 android:id="@+id/rbSaldo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/farro"
                 android:text="Ver saldo" />
 
             <RadioButton
                 android:id="@+id/rbIngresar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/farro"
                 android:text="Ingresar" />
 
             <RadioButton
                 android:id="@+id/rbRetirar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/farro"
                 android:text="Retirar" />
 
             <RadioButton
                 android:id="@+id/rbSalir"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/farro"
                 android:text="Salir" />
         </RadioGroup>
     </androidx.cardview.widget.CardView>
