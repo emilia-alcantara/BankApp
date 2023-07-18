@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
 debe permitir realizar la operación
 5.- Salir (Cerrar la Aplicación).*/
 
-
     }
 
     private fun initListeners() {
@@ -36,22 +35,48 @@ debe permitir realizar la operación
     }
 
     private fun retirarSaldo() {
-        var saldoRetirado = binding.editMonto.text.toString().toInt()
-        saldo -= saldoRetirado
-        Toast.makeText(this, "Saldo retirado $ $saldoRetirado", Toast.LENGTH_LONG).show()
-        binding.editMonto.setText("")
+
+        if(binding.editMonto.text.toString().isEmpty()){
+            mostrarNotificacion("Debe ingresar un monto válido")
+            return
+        }
+        val saldoARetirar = binding.editMonto.text.toString().toInt()
+
+        if(saldoARetirar > saldo){
+            mostrarNotificacion("Error. El monto a retirar es mayor al saldo")
+            limpiarEditText()
+        } else {
+            saldo -= saldoARetirar
+            mostrarNotificacion("Saldo retirado $ $saldoARetirar")
+            limpiarEditText()
+        }
+
     }
 
     private fun ingresarSaldo() {
-        saldo += binding.editMonto.text.toString().toInt()
-        Toast.makeText(this, "Saldo ingresado $ $saldo", Toast.LENGTH_LONG).show()
-        binding.editMonto.setText("")
+
+        if(binding.editMonto.text.isEmpty()){
+            mostrarNotificacion("Debe ingresar un monto válido")
+            return
+        }
+
+        val saldoAIngresar = binding.editMonto.text.toString().toInt()
+        saldo += saldoAIngresar
+        mostrarNotificacion("Saldo ingresado $ $saldo")
+        limpiarEditText()
     }
 
     private fun mostrarSaldo() {
         binding.editMonto.setText(saldo.toString())
-        Toast.makeText(this, "Ver saldo realizado exitosamente", Toast.LENGTH_LONG).show()
+        mostrarNotificacion("Ver saldo realizado exitosamente")
     }
 
+    private fun limpiarEditText() {
+        binding.editMonto.text.clear()
+    }
+
+    private fun mostrarNotificacion(mensaje: String) {
+        Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show()
+    }
 
 }
