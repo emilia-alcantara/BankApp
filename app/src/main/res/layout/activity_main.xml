@@ -55,7 +55,7 @@
         android:layout_marginTop="76dp"
         android:ems="10"
         android:hint="Monto"
-        android:inputType="text"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
         app:layout_constraintStart_toStartOf="@+id/cardView"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
